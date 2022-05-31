@@ -1,0 +1,108 @@
+@use "sass:math";
+// : Миксины
+// : Функции
+// : Переменные
+/* : Стартовые классы */
+
+// ! <Миксины>=============================================================================================================================================// !
+@mixin ItC($propetry, $mobSize, $pcSize) {
+    // * Внутри ограничивающего контейнера (Inside the container)
+    @media only screen and (max-width: $container) {
+        #{$propetry}: calc(#{$mobSize + px} + (#{$pcSize} - #{$mobSize}) * ((100vw - 320px) / (#{$container} - 320)));
+    }
+}
+
+@mixin OtC($propetry, $mobSize, $pcSize, $canvasSize: 1440) {
+    // * За пределами ограничивающего контейнера (Outside the container)
+    @media only screen and (min-width: $container) {
+        #{$propetry}: calc(#{$mobSize + px} + (#{$pcSize} - #{$mobSize}) * ((100vw - 320px) / (#{$canvasSize} - 320)));
+    }
+}
+
+@mixin WR($propetry, $mobSize, $pcSize, $canvasSize: 1440) {
+    // * Отзывчивость по ширине (Width Responsiveness)
+    #{$propetry}: calc(#{$mobSize + px} + (#{$pcSize} - #{$mobSize}) * ((100vw - 320px) / (#{$canvasSize} - 320)));
+}
+
+@mixin connect-font($font_name, $file_name, $weight, $style) {
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+// ! </Миксины>============================================================================================================================================// !
+
+// ! <Функции>=============================================================================================================================================// !
+@function rem($value) {
+    // * px to rem
+    $remValue: math.div($value, $mainFontSize) + rem;
+    @return $remValue;
+}
+
+@function em($value) {
+    // * px to em
+    $remValue: math.div($value, $mainFontSize) + em;
+    @return $remValue;
+}
+// ! </Функции>============================================================================================================================================// !
+
+// ! <Переменные>=============================================================================================================================================// !
+$additionallyPx: 10; // @ px
+$container: 1430; // @ px
+$mainFontSize: 16; // @ px
+$mainFontFamily: Arial, sans-serif;
+$mainFontColor: #000;
+
+$md1: em($container + $additionallyPx);
+$md2: em(992);
+$md3: em(767);
+$md4: em(479);
+// ! </Переменные>============================================================================================================================================// !
+
+/* ! <Стартовые классы>============================================================================================================================================= */
+.container {
+    max-width: $container + px;
+    margin: 0 auto;
+    @media only screen and (max-width: $md1) {
+        max-width: 970px;
+    }
+    @media only screen and (max-width: $md2) {
+        max-width: 750px;
+    }
+    @media only screen and (max-width: $md3) {
+        max-width: none;
+        padding: 0 10px;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.page {
+    flex: 1 1 auto;
+}
+
+.noscript {
+    text-align: center;
+    margin: 200px 150px;
+    background-color: #f00;
+    padding: 15px;
+    border-radius: 10px;
+    color: #fff;
+    &__title {
+        font-size: 3em;
+        margin: 20px 0;
+    }
+
+    &__title-sup {
+        font-size: 1.5em;
+        margin: 20px 0;
+    }
+}
+/* ! </Стартовые классы>============================================================================================================================================ */
