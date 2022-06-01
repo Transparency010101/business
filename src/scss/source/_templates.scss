@@ -2,14 +2,38 @@
 .button {
     background-color: $secondColor;
     height: 56px;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
     &-text {
         font-size: 16px;
         letter-spacing: 1px;
         color: $buttonTextColor;
         text-transform: uppercase;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        transition: all 0.4s ease 0s;
+        width: 0;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        background-color: #005571;
+    }
+
+    span {
+        position: relative;
+        z-index: 2;
+    }
+
+    &:hover {
+        &::after {
+            width: 100%;
+            left: 0;
+        }
     }
 }
 /* ! </Template>============================================================================================================================================*/
