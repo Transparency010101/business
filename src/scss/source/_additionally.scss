@@ -50,11 +50,15 @@
 // ! </Функции>============================================================================================================================================// !
 
 // ! <Переменные>=============================================================================================================================================// !
-$additionallyPx: 10; // @ px
-$container: 1430; // @ px
-$mainFontSize: 16; // @ px
-$mainFontFamily: Arial, sans-serif;
-$mainFontColor: #000;
+$additionallyPx: 0; // @ px
+$container: 1160; // @ px
+$mainFontSize: 20; // @ px
+$mainFontFamily:  'Montserrat', sans-serif;
+
+$mainFontColor: #646667;
+$maskColor: linear-gradient(198.43deg, #007397 4.17%, rgba(0, 115, 151, 0.0001) 87.5%);
+$secondColor: #007397;
+$buttonTextColor: #fff;
 
 $md1: em($container + $additionallyPx);
 $md2: em(992);
@@ -76,6 +80,7 @@ $md4: em(479);
         max-width: none;
         padding: 0 10px;
     }
+    padding: 0 10px;
 }
 
 .wrapper {
