@@ -50,8 +50,8 @@
 // ! </Функции>============================================================================================================================================// !
 
 // ! <Переменные>=============================================================================================================================================// !
-$additionallyPx: 0; // @ px
-$container: 1160; // @ px
+$additionallyPx: 10px; // @ px
+$container: 1170; // @ px
 $mainFontSize: 20; // @ px
 $mainFontFamily:  'Montserrat', sans-serif;
 
@@ -70,6 +70,7 @@ $md4: em(479);
 .container {
     max-width: $container + px;
     margin: 0 auto;
+    padding: 0 10px;
     @media only screen and (max-width: $md1) {
         max-width: 970px;
     }
@@ -78,9 +79,7 @@ $md4: em(479);
     }
     @media only screen and (max-width: $md3) {
         max-width: none;
-        padding: 0 10px;
     }
-    padding: 0 10px;
 }
 
 .wrapper {
