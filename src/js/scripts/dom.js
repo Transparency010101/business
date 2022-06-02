@@ -8,9 +8,9 @@ newsNavFilterItem.forEach(link => {
     link.addEventListener("click", function (e) {
         let dataFilterCount = link.getAttribute("data-filter");
         newsColumnsColumn.forEach(column => {
-            if (dataFilterCount == "3" && dataFilterCount == 3){
+            if (dataFilterCount == "3" && dataFilterCount == 3) {
                 column.classList.add("active");
-            } else  {
+            } else {
                 column.classList.remove("active");
                 if (column.classList.contains("filter_" + dataFilterCount)) {
                     column.classList.add("active");
@@ -39,10 +39,6 @@ newsColumnsColumn.forEach(el => {
             el.style.flex = "0 1 50%";
             break;
 
-        case 3:
-            el.style.flex = "0 1 33.333%";
-            break;
-
         case 4:
             el.style.flex = "0 1 25%";
             break;
@@ -52,7 +48,7 @@ newsColumnsColumn.forEach(el => {
 
 // * Изменяет отборание ссылок фильтров {
 newsNavFilterItem.forEach(link => {
-    link.addEventListener("click", function() {
+    link.addEventListener("click", function () {
         newsNavFilterItem.forEach(removeLink => {
             removeLink.classList.remove("active");
         });
@@ -60,3 +56,15 @@ newsNavFilterItem.forEach(link => {
     });
 });
 // * Изменяет отборание ссылок фильтров }
+
+// * header burger {
+const headerBurger = document.querySelector(".header__burger");
+const headerMenu = document.querySelector(".header__menu");
+const body = document.querySelector("body");
+
+headerBurger.addEventListener("click", function (e) {
+    headerBurger.classList.toggle("active");
+    headerMenu.classList.toggle("active");
+    body.classList.toggle("lock");
+});
+// * header burger }

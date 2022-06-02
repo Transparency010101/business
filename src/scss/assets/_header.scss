@@ -3,12 +3,14 @@
 /* ! <header>=============================================================================================================================================*/
 .header {
     $contentzindex: 3;
-    $activete-menuburger: $md2;
+    $activete-menuburger: $md1;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 50;
+
+    padding: 0 10px;
 
     &::before {
         content: "";
@@ -23,16 +25,18 @@
 
     &__burger {
         display: none;
-        @media (max-width:$activete-menuburger) {
+        @media (max-width: $activete-menuburger) {
             body.lock {
                 overflow: hidden;
             }
             display: block;
             position: relative;
             z-index: $contentzindex;
-            width: 30px;
-            height: 20px;
-            &::before, &::after, & span {
+            width: 40px;
+            height: 25px;
+            &::before,
+            &::after,
+            & span {
                 content: "";
                 position: absolute;
                 left: 0;
@@ -42,23 +46,23 @@
                 transition-duration: 300ms;
             }
             &::before {
-                top: 1px;
+                top: 0px;
             }
             &::after {
                 bottom: 1px;
             }
             & span {
-                top: 8px;
+                top: 10px;
             }
         }
         &.active {
             &::before {
-                top: 9px;
+                top: 10px;
                 transform: rotate(45deg);
             }
             &::after {
                 transform: rotate(-45deg);
-                bottom: 9px;
+                bottom: 12px;
             }
             & span {
                 transform: scale(0);
@@ -67,7 +71,7 @@
     }
 
     &__menu {
-        @media (max-width:$activete-menuburger) {
+        @media (max-width: $activete-menuburger) {
             position: fixed;
             top: -100%;
             left: 0;
@@ -75,10 +79,10 @@
             height: 100%;
             $menu-color: rgba(0, 0, 0, 0.8);
             background-color: $menu-color;
-            padding: 100px 0 0 0;
+            padding: 120px 0 0 0;
 
             transition-duration: 400ms;
-            
+
             overflow: auto;
             &.active {
                 top: 0;
@@ -95,21 +99,25 @@
     }
 
     &__list {
+        position: relative;
+        z-index: $contentzindex;
         display: flex;
         margin: 0 0 0 25px;
+        @media only screen and (max-width: $md1) {
+            display: block;
+        }
     }
 
     &__list-link {
         margin: 0 28px 0 0;
         padding: 1px 0 0 0;
 
-        &:last-child {
-            margin: 0;
-        }
-
         position: relative;
         z-index: $contentzindex;
 
+        &:last-child {
+            margin: 0;
+        }
         span a {
             font-size: 12px;
             font-weight: 700;
@@ -117,36 +125,47 @@
             text-transform: uppercase;
 
             transition: all 0.2s ease 0s;
+
+            @media only screen and (max-width: $md1) {
+                font-size: 16px;
+                color: #fff;
+            }
+        }
+
+        @media only screen and (max-width: $md1) {
+            margin: 0 0 15px 0;
         }
 
         // * Стили для underline в ссылках {
-        span {
-            position: relative;
-            display: block;
-            &::after {
-                content: "";
-                position: absolute;
-                left: 50%;
-                bottom: -5px;
+        @media only screen and (min-width: $md1) {
+            span {
+                position: relative;
+                display: block;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    bottom: -5px;
 
-                width: 0;
-                height: 1.5px;
-                background-color: $secondColor;
+                    width: 0;
+                    height: 1.5px;
+                    background-color: $secondColor;
 
-                transition: all 0.3s ease 0s;
+                    transition: all 0.3s ease 0s;
+                }
             }
-        }
 
-        &:hover {
-            span::after {
-                left: 0;
-                width: 100%;
+            &:hover {
+                span::after {
+                    left: 0;
+                    width: 100%;
+                }
             }
-        }
-        // * Стили для underline в ссылках }
+            // * Стили для underline в ссылках }
 
-        span:hover a {
-            color: $secondColor;
+            span:hover a {
+                color: $secondColor;
+            }
         }
 
         span:active a {
@@ -157,6 +176,9 @@
             background: url("../img/header/icons/world.svg") right no-repeat;
             padding: 1px 39px 0 0;
             height: 28px;
+            @media only screen and (max-width: $md1) {
+                display: inline-block;
+            }
         }
     }
 
@@ -173,4 +195,3 @@
     }
 }
 /* ! </header>============================================================================================================================================*/
-

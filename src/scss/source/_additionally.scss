@@ -70,7 +70,6 @@ $md4: em(479);
 .container {
     max-width: $container + px;
     margin: 0 auto;
-    padding: 0 10px;
     @media only screen and (max-width: $md1) {
         max-width: 970px;
     }
@@ -79,6 +78,7 @@ $md4: em(479);
     }
     @media only screen and (max-width: $md3) {
         max-width: none;
+        padding: 0 10px;
     }
 }
 
