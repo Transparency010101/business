@@ -7,14 +7,14 @@
 // ! <Миксины>=============================================================================================================================================// !
 @mixin ItC($propetry, $mobSize, $pcSize) {
     // * Внутри ограничивающего контейнера (Inside the container)
-    @media only screen and (max-width: $container) {
+    @media only screen and (max-width: $md1) {
         #{$propetry}: calc(#{$mobSize + px} + (#{$pcSize} - #{$mobSize}) * ((100vw - 320px) / (#{$container} - 320)));
     }
 }
 
 @mixin OtC($propetry, $mobSize, $pcSize, $canvasSize: 1440) {
     // * За пределами ограничивающего контейнера (Outside the container)
-    @media only screen and (min-width: $container) {
+    @media only screen and (min-width: $md1) {
         #{$propetry}: calc(#{$mobSize + px} + (#{$pcSize} - #{$mobSize}) * ((100vw - 320px) / (#{$canvasSize} - 320)));
     }
 }
@@ -50,8 +50,7 @@
 // ! </Функции>============================================================================================================================================// !
 
 // ! <Переменные>=============================================================================================================================================// !
-$additionallyPx: 10; // @ px
-$container: 1170; // @ px
+$container: 1180; // @ px
 $mainFontSize: 20; // @ px
 $mainFontFamily:  'Montserrat', sans-serif;
 
@@ -60,7 +59,7 @@ $maskColor: linear-gradient(198.43deg, #007397 4.17%, rgba(0, 115, 151, 0.0001) 
 $secondColor: #007397;
 $buttonTextColor: #fff;
 
-$md1: ($container + $additionallyPx);
+$md1: $container + px;
 $md2: 992px;
 $md3: 767px;
 $md4: 479px;

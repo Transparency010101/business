@@ -24,6 +24,9 @@
             position: absolute;
             left: -90px;
             top: -120px;
+
+            @include ItC("left", -304, -90);
+            @include ItC("top", -74, -120);
         }
 
         img {
@@ -34,10 +37,11 @@
 
     &__title {
         position: absolute;
+        z-index: 2;
         right: 0;
         bottom: 80px;
 
-        font-family: 'PT Serif', serif;
+        font-family: "PT Serif", serif;
         font-size: 32px;
         text-shadow: 0px 3px 1px rgba(0, 0, 0, 0.6);
         font-weight: 700;
@@ -48,14 +52,25 @@
         text-align: left;
 
         max-width: 770px;
+
+        @include ItC("max-width", 275, 770);
+        @include ItC("line-height", 19, 48);
+        @include ItC("font-size", 11, 32);
+        @include ItC("bottom", 20, 80);
     }
 
     &__text {
         margin: 35px 0 33px 0;
+        @include ItC("font-size", 14, 20);
+        @include ItC("line-height", 21, 36);
     }
 
     &__button {
         width: 370px;
+        @include ItC("width", 277, 370);
+        span {
+            @include ItC("font-size", 13.5, 16);
+        }
     }
 }
 /* ! </We>============================================================================================================================================ */
