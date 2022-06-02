@@ -56,15 +56,3 @@ newsNavFilterItem.forEach(link => {
     });
 });
 // * Изменяет отборание ссылок фильтров }
-
-// * header burger {
-const headerBurger = document.querySelector(".header__burger");
-const headerMenu = document.querySelector(".header__menu");
-const body = document.querySelector("body");
-
-headerBurger.addEventListener("click", function (e) {
-    headerBurger.classList.toggle("active");
-    headerMenu.classList.toggle("active");
-    body.classList.toggle("lock");
-});
-// * header burger }

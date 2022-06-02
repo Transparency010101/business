@@ -6,6 +6,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
+
         height: 85px;
 
         font-size: 12px;
@@ -13,12 +15,33 @@
         line-height: 40px;
         letter-spacing: 1px;
         text-transform: uppercase;
+
+        @media only screen and (max-width:$md4) {
+            justify-content: center;
+        }
     }
 
     &__left {
+        margin: 0 10px 0 5px;
+        white-space: nowrap;
     }
 
     &__right {
+        white-space: nowrap;
+        a {
+            margin: 0 35px 0 0;
+            color: #646667;
+            transition: all 0.2s ease 0s;
+            &:hover {
+                color: #9a9a9a;
+            }
+            &:last-child {
+                margin: 0 5px 0 0;
+            }
+            @media only screen and (max-width: $md4) {
+                margin: 0 15px 0 0;
+            }
+        }
     }
 }
 /* ! </footer>============================================================================================================================================*/

@@ -3,7 +3,7 @@
 /* ! <header>=============================================================================================================================================*/
 .header {
     $contentzindex: 3;
-    $activete-menuburger: $md1;
+    $activete-menuburger: $md2;
     position: fixed;
     width: 100%;
     top: 0;
@@ -103,7 +103,7 @@
         z-index: $contentzindex;
         display: flex;
         margin: 0 0 0 25px;
-        @media only screen and (max-width: $md1) {
+        @media only screen and (max-width: $md2) {
             display: block;
         }
     }
@@ -126,18 +126,18 @@
 
             transition: all 0.2s ease 0s;
 
-            @media only screen and (max-width: $md1) {
+            @media only screen and (max-width: $md2) {
                 font-size: 16px;
                 color: #fff;
             }
         }
 
-        @media only screen and (max-width: $md1) {
+        @media only screen and (max-width: $md2) {
             margin: 0 0 15px 0;
         }
 
         // * Стили для underline в ссылках {
-        @media only screen and (min-width: $md1) {
+        @media only screen and (min-width: $md2) {
             span {
                 position: relative;
                 display: block;
@@ -176,7 +176,7 @@
             background: url("../img/header/icons/world.svg") right no-repeat;
             padding: 1px 39px 0 0;
             height: 28px;
-            @media only screen and (max-width: $md1) {
+            @media only screen and (max-width: $md2) {
                 display: inline-block;
             }
         }
