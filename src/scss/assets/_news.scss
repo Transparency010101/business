@@ -9,17 +9,29 @@
 
     &__header {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
 
         margin: 0 0 48px 0;
+
+        @media only screen and (max-width:601px) {
+            justify-content: center;
+        }
     }
 
     &__title {
+        margin: 0 0 50px 0;
     }
 
     &__nav-filter {
         display: flex;
         text-align: center;
+        @media only screen and (max-width:1345px) {
+            margin: 0 80px 0 0;
+        }
+        @media only screen and (max-width: $md1) {
+            margin: 0 0 20px 0;
+        }
     }
 
     &__nav-filter-item {
@@ -28,6 +40,10 @@
         text-transform: uppercase;
         cursor: pointer;
         user-select: none;
+
+        @media only screen and (max-width:$md4) {
+            margin: 0 42px 0 0;
+        }
 
         &.active {
             color: $secondColor;
@@ -44,11 +60,14 @@
 /* ! <news-columns>============================================================================================================================================= */
 .news-columns {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 
     &__column {
-        flex: 1 1 33.333%;
         display: none;
+        justify-self: center;
+        flex: 0 0 33.333%;
+        margin: 0 0 40px 0;
         &.active {
             display: flex;
         }
@@ -74,6 +93,9 @@
             left: -69px;
             height: 120%;
             width: 370px;
+        }
+        img {
+            object-fit: contain;
         }
     }
 
@@ -116,7 +138,13 @@
         font-weight: 400;
         line-height: 32px;
 
-        margin-bottom: 22px;
+        margin: 0 0 32px 0;
+
+        @include ItC("font-size", 14, 16);
+        @media only screen and (max-width:$md4) {
+            text-align: center;
+            margin: 0 10px 32px 10px;
+        }
     }
 
     &__sub-text {
@@ -148,6 +176,10 @@
                 left: 0;
                 width: 100%;
             }
+        }
+
+        @media only screen and (max-width:$md4) {
+            text-align: center;
         }
     }
 }

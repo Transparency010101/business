@@ -22,29 +22,29 @@ newsNavFilterItem.forEach(link => {
 });
 // * Фильтер для news }
 
-// * Меняется flex размер, взависимости от количетва колонок {
-let newsColumnsColumnLenght = newsColumnsColumn.length;
+// // * Меняется flex размер, взависимости от количетва колонок {
+// let newsColumnsColumnLenght = newsColumnsColumn.length;
 
-newsColumnsColumn.forEach(el => {
-    switch (newsColumnsColumnLenght) {
-        case 1:
-            el.style.flex = "0 1 100%";
-            break;
+// newsColumnsColumn.forEach(el => {
+//     switch (newsColumnsColumnLenght) {
+//         case 1:
+//             el.style.flex = "0 0 100%";
+//             break;
 
-        case 3:
-            el.style.flex = "0 1 33.333%";
-            break;
+//         case 3:
+//             el.style.flex = "0 0 33.333%";
+//             break;
 
-        case 2:
-            el.style.flex = "0 1 50%";
-            break;
+//         case 2:
+//             el.style.flex = "0 0 50%";
+//             break;
 
-        case 4:
-            el.style.flex = "0 1 25%";
-            break;
-    }
-});
-// * Меняется flex размер, взависимости от количетва колонок }
+//         case 4:
+//             el.style.flex = "0 0 25%";
+//             break;
+//     }
+// });
+// // * Меняется flex размер, взависимости от количетва колонок }
 
 // * Изменяет отборание ссылок фильтров {
 newsNavFilterItem.forEach(link => {
